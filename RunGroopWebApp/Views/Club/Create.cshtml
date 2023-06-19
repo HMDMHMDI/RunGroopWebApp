@@ -1,0 +1,48 @@
+@using RunGroopWebApp.Data.Enum
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model RunGroopWebApp.ViewModels.CreateClubViewModel 
+
+@{
+}
+
+<form method="post" asp-action="Create" enctype="multipart/form-data">
+    <div class="form-group">
+        <label asp-for="Title">Title</label>
+        <input asp-for="Title" class="form-control" placeholder="Title">
+        <span class="text-danger" asp-validation-for="Title"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Description">Description</label>
+        <input asp-for="Description" class="form-control" placeholder="Description">
+        <span class="text-danger" asp-validation-for="Description"></span>
+    </div>
+    
+    <div class="form-group">
+                    <label asp-for="ClubCategory">ClubCategory</label>
+        <select asp-for="ClubCategory" asp-items="@Html.GetEnumSelectList<ClubCategory>()">
+            <option>--select--</option>
+        </select>
+                    <span class="text-danger" asp-validation-for="ClubCategory"></span>
+                </div>
+    <div class="form-group">
+                <label asp-for="Address.Street">Street</label>
+                <input asp-for="Address.Street" class="form-control" placeholder="Street">
+                <span class="text-danger" asp-validation-for="Address.Street"></span>
+            </div>
+    <div class="form-group">
+        <label asp-for="Address.City">City</label>
+        <input asp-for="Address.City" class="form-control" placeholder="City">
+        <span class="text-danger" asp-validation-for="Address.City"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Address.State">State</label>
+        <input asp-for="Address.State" class="form-control" placeholder="State">
+        <span class="text-danger" asp-validation-for="Address.State"></span>
+    </div>
+    <div class="form-group">
+            <label asp-for="Image">Image</label>
+            <input type="file" asp-for="Image" class="form-control" placeholder="Image">
+            <span class="text-danger" asp-validation-for="Image"></span>
+        </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
