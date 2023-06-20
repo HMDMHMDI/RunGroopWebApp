@@ -1,10 +1,10 @@
 using Google.Protobuf.WellKnownTypes;
 using Microsoft.EntityFrameworkCore;
 using RunGroopWebApp.Models;
-
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 namespace RunGroopWebApp.Data;
 
-public class ApplicationDbContext : DbContext
+public class ApplicationDbContext : IdentityDbContext<AppUser>
 {
     public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
     {

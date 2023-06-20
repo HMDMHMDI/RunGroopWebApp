@@ -22,7 +22,10 @@ public class ClubRepository : IClubRepository
     {
         return await _context.Clubs.Include(i => i.Address).FirstOrDefaultAsync(i => i.Id == Id);
     }
-
+    public async Task<Club> GetByIdAsyncNoTracking(int Id)
+    {
+        return await _context.Clubs.Include(i => i.Address).AsNoTracking().FirstOrDefaultAsync(i => i.Id == Id);
+    }
     public async Task<IEnumerable<Club>> GetClubByCity(string City)
     {
         return await _context.Clubs.Where(i => i.Address.City.Contains(City)).ToListAsync();
