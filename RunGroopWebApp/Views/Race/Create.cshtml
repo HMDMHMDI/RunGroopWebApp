@@ -6,6 +6,7 @@
 }
 
 <form method="post" asp-action="Create" enctype="multipart/form-data">
+    <input type="hidden" id="AppUserId" name="AppUserId" asp-for="AppUserId"/>
     <div class="form-group">
         <label asp-for="Title">Title</label>
         <input asp-for="Title" class="form-control" placeholder="Title">
@@ -22,26 +23,26 @@
         <span class="text-danger" asp-validation-for="Image"></span>
     </div>
     <div class="form-group">
-                    <label asp-for="RaceCategory">ClubCategory</label>
+        <label asp-for="RaceCategory">ClubCategory</label>
         <select asp-for="RaceCategory" asp-items="@Html.GetEnumSelectList<RaceCategory>()">
             <option>--select--</option>
         </select>
-                    <span class="text-danger" asp-validation-for="RaceCategory"></span>
-                </div>
+        <span class="text-danger" asp-validation-for="RaceCategory"></span>
+    </div>
     <div class="form-group">
-                <label asp-for="Address.Street">Street</label>
-                <input asp-for="Address.Street" class="form-control" placeholder="Street">
-                <span class="text-danger" asp-validation-for="Address.Street"></span>
-            </div>
+        <label asp-for="Address.Street">Street</label>
+        <input asp-for="Address.Street" class="form-control" placeholder="Street">
+        <span class="text-danger" asp-validation-for="Address.Street"></span>
+    </div>
     <div class="form-group">
         <label asp-for="Address.City">City</label>
         <input asp-for="Address.City" class="form-control" placeholder="City">
         <span class="text-danger" asp-validation-for="Address.City"></span>
     </div>
     <div class="form-group">
-                        <label asp-for="Address.State">State</label>
-                        <input asp-for="Address.State" class="form-control" placeholder="State">
-                        <span class="text-danger" asp-validation-for="Address.State"></span>
-                    </div>
+        <label asp-for="Address.State">State</label>
+        <input asp-for="Address.State" class="form-control" placeholder="State">
+        <span class="text-danger" asp-validation-for="Address.State"></span>
+    </div>
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
