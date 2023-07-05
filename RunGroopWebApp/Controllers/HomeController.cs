@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using System.ComponentModel.DataAnnotations;
+using System.Data;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using RunGroopWebApp.Data;
@@ -9,6 +11,8 @@ using RunGroopWebApp.ViewModels;
 using System.Diagnostics;
 using System.Globalization;
 using System.Net;
+using Microsoft.AspNetCore.Mvc.Core.Infrastructure;
+using Org.BouncyCastle.Crypto.Operators;
 
 namespace RunGroopWebApp.Controllers
 {
